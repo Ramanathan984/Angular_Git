@@ -1,0 +1,39 @@
+<p *ngIf="displayName;else elseBlock"  >
+  structural-directive works!
+</p>
+
+<ng-template #elseBlock >
+
+  <p>Else Block works</p>
+
+</ng-template>
+
+
+
+<h2 *ngIf="displayName; then thenBlock; else elseBlock2" ></h2>
+
+<ng-template #thenBlock>
+  <h1>Then Block</h1>
+</ng-template>
+
+<ng-template #elseBlock2>
+  <h1>else Block 2</h1>
+</ng-template>
+
+<input type="text" [(ngModel)]="color">
+
+<div [ngSwitch]="color">
+  <h2 *ngSwitchCase="'green'"> You have picked green Color</h2>    
+  <h2 *ngSwitchCase="'red'"> You have picked Red Color</h2>
+  <h2 *ngSwitchCase="'violet'"> You have picked violet Color</h2>
+  <h2 *ngSwitchDefault>Choose again</h2>
+</div>
+
+
+
+<div *ngFor="let c of colors;index as i">
+       {{i}}{{c}}
+</div>
+<div *ngFor="let c of colors;last as l">
+ <h2>{{l}} {{c}}</h2>
+</div>

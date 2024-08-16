@@ -6,12 +6,16 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { EvenBindingComponent } from './even-binding/even-binding.component';
+import { StructuralDirectiveComponent } from './structural-directive/structural-directive.component';
+import { ChildComponentComponent } from './child-component/child-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    EvenBindingComponent
+    EvenBindingComponent,
+    StructuralDirectiveComponent,
+    ChildComponentComponent
   ],
   imports: [
     BrowserModule,

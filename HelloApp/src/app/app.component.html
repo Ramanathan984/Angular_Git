@@ -6,8 +6,16 @@
   </h1>
   <!-- <div class="app-test"></div> -->
   <!-- <div app-test></div> -->
-  <app-even-binding></app-even-binding>
+<!--   <app-even-binding></app-even-binding> -->
+
+<!-- <app-structural-directive></app-structural-directive> -->
+
+<app-child-component (child2)="message=$event" [parentData]="parentName"></app-child-component>
+{{message}}
+
 </div>
 <h2>Here are some links to help you start: </h2>
+
+
 
 

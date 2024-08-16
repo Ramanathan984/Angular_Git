@@ -1,0 +1,31 @@
+<p>
+  child-component works and the parent data is {{name}}
+</p>
+
+<button (click)="onFireEvent()">Send Child data to Parent</button>
+
+<h1>{{testPipe | uppercase}}</h1>
+<h1>{{testPipe | lowercase}}</h1>
+<h1>{{testPipe | titlecase}}</h1>
+
+<h1>{{testPipe | slice :3:5}}</h1>
+
+<h1>{{testPipeObject | json }}</h1>
+
+
+<h1>{{testPipeNumber | number:'3.1-1' }}</h1>
+
+<h1>{{testPipeDate | date:'short' }}</h1>
+<h1>{{testPipeDate | date:'medium' }}</h1>
+<h1>{{testPipeDate | date:'long' }}</h1>
+
+<h1>Date</h1>
+<h1>{{testPipeDate | date:'shortDate' }}</h1>
+<h1>{{testPipeDate | date:'mediumDate' }}</h1>
+<h1>{{testPipeDate | date:'longDate' }}</h1>
+
+
+<h1>Time</h1>
+<h1>{{testPipeDate | date:'shortTime' }}</h1>
+<h1>{{testPipeDate | date:'mediumTime' }}</h1>
+<h1>{{testPipeDate | date:'longTime' }}</h1>
