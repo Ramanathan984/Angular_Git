@@ -1,0 +1,16 @@
+<h1>Event Binding Exercise</h1>
+<button (click)="onClick($event)">Enter</button>
+<h1>{{greetings}}</h1>
+<h1> {{eventNames}}</h1>
+
+<!-- #checkInput is the template Literal  --> 
+<input #checkInput type="text">
+<button (click)="onClickInput(checkInput)">TemplateLiterExample</button>
+{{showText}}
+
+<!-- Two Way Binding -->
+<div> 
+<label>Two Way  Binding </label>
+<input [(ngModel)] = "name" type="text">
+{{name}}
+</div>
