@@ -23,6 +23,34 @@
         <small *ngIf="registrationForm.errors?.misMatch" class="text-danger" >Password MisMatch </small>
       </div>
 
+      <!-- Email field -->
+      <div class="form-group mb-3">
+        <label>Email</label>
+        <button class="button btn-secondary sm m-2" (click)="addAlterNateEmails()">Add email</button>
+        <input formControlName="email" formControlName="email" type="email" class="form-control" [class.is-invalid]="email.invalid && email.touched">
+           <small class="text-danger" [class.d-none]="email.valid || email.untouched">
+         Email is required 
+      </small>
+      </div>  
+
+      <div class="form-group mb-3">
+      <div formArrayName="alternateEmails"  *ngFor="let mail of alternateEmails.controls;index as i">
+        <input [formControlName]="i"  type="email" class="form-control mb-3" >
+      </div>  
+      </div>
+      <!-- Email field -->
+
+      <!-- Check box -->
+      <div class="form-group mb-3">
+        <div class="form-check">
+          <input class="form-check-input" formControlName="subscribe" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Default checkbox
+          </label>
+        </div>
+      </div>  
+      <!-- Check box -->
+
     <div formGroupName="address">
       <div class="form-group mb-3">
         <label>city</label>
@@ -38,6 +66,36 @@
       </div>
     </div>
       
+
+  <div formArrayName="contact">
+    <div *ngFor="let contactGroup of contact.controls;let  i=index" [formGroupName]="i">
+      <div class="row pt-2">
+        <!-- select type -->
+        <div class="col md-5 mb-3">
+          <div class="form-group">
+            <select class="form-select"  formControlName="contactType" placeholder="contactType">
+              <option selected value="">Choose...</option>
+              <option *ngFor =" let contactType of contactTypes" [value]="contactType"> {{contactType}}</option>
+            </select>
+          </div>
+        </div>
+        <!-- select type -->
+         <!-- mobile Number -->
+        <div class="col md-5">
+          <input type="text" formControlName="mobileNumber" placeholder="mobileNumber" class="form-control">
+        </div>
+        <!-- mobile Number -->
+         <!-- Remove button -->
+        <div class="col md-2">
+          <button class="btn btn-danger" (click)="onRemove(i)">Remove</button>
+        </div>
+        <!-- Remove button -->
+      </div>
+    </div>
+    <div class="mb-3">
+    <button class="btn btn-success" (click)="addContact()">+ Add</button>
+  </div>
+  </div>
       <button class="btn btn-primary" type="submit">Register</button>
       <div class="btn btn-secondary ml-4" (click)="loadApi()">Load Api data</div>
     
